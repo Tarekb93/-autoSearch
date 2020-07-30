@@ -1,0 +1,10 @@
+body {
+  background-image: url(10best-cars-group-cropped-1542126037.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
