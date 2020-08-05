@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const missingHandler = require("./missing");
 
 function homeHandler(request, response) {
   // public directory is one level above this, so we need the ".."
@@ -7,8 +8,7 @@ function homeHandler(request, response) {
   fs.readFile(filePath, (error, file) => {
     if (error) {
       console.log(error);
-      response.writeHead(404, { "content-type": "text/html" });
-      response.end("<h1>Not found</h1>");
+      missingHandler(request, response);
     } else {
       response.writeHead(200, { "content-type": "text/html" });
       response.end(file);

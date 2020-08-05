@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const missingHandler = require("./missing");
 const filePath = path.join(__dirname, "..", "public", "library.txt");
 const filterItems = (arr, query) => {
   return arr.filter(
@@ -17,8 +18,8 @@ function autoComplete(request, response) {
   request.on("end", () => {
     fs.readFile(filePath, "utf-8", (error, file) => {
       if (error) {
-        response.writeHead(500, { "content-type": "text/html" });
-        response.end("server not working");
+        console.log(error);
+        missingHandler(request, response);
       }
       const words = file.split(", ");
       const result = filterItems(words, body);

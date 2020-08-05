@@ -7,20 +7,22 @@
     <link rel="stylesheet" href="/public/style.css" />
   </head>
   <body>
-    <h1>Cars Finder</h1>
+    <h1>Cars Details</h1>
     <div class="searchBar">
       <form>
-        <input type="text" list="myDatalist" placeholder="please insert text" />
-        <datalist id="myDatalist">
-          <!-- <option value="apple"> </option>
-          <option value="var"> </option> -->
-        </datalist>
+        <input type="text" list="myDatalist" placeholder="Choose Car Maker" />
+        <datalist id="myDatalist"> </datalist>
 
-        <input type="submit" value="search" id="submit-btn" />
+        <input type="submit" value="search" id="submit" />
       </form>
     </div>
-    <p id="log"></p>
+    <div class="miniContainerForResultResponse">
+      <span id="car name" class="car-Name"> Car Maker</span>
+      <span id="avghorsepower" class="avr-horse-power"> Avg Horse Power</span>
+      <span id="carImage" class="carImage"> </span>
+      <span id="price" class="carPrice"> Car Price</span>
+      <span id="numModels" class="numModels"> Num Of Models</span>
+    </div>
     <script src="/public/index.js"></script>
-    
   </body>
 </html>

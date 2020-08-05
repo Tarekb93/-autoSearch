@@ -2,9 +2,53 @@ body {
   background-image: url(10best-cars-group-cropped-1542126037.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  /* display: flex; */
   align-items: center;
   justify-content: center;
   text-align: center;
 }
 
+.miniContainerForResultResponse {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.numModels,
+.carPrice,
+.avr-horse-power,
+.car-Name {
+  display: flex;
+  border-width: 15px;
+  padding: 10mm;
+  align-items: flex-end;
+  flex-direction: row;
+  margin-top: 20mm;
+  margin-left: 5mm;
+  margin-right: 5mm;
+  border-radius: 10px;
+  font-size: 7mm;
+  font-style: oblique;
+}
+
+.numModels {
+  background-color: cornsilk;
+  margin-top: 70mm;
+}
+
+.carPrice {
+  background-color: crimson;
+}
+
+.avr-horse-power {
+  background-color: darkgreen;
+}
+
+.car-Name {
+  background-color: deeppink;
+  margin-top: 70mm;
+  /* background-color: rgba(red, green, blue, alpha); */
+}
+
+.carImage {
+  margin-top: 70mm;
+}
