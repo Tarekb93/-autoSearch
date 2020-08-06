@@ -9,7 +9,7 @@ const filterItems = (arr, query) => {
 const url =
   "https://private-anon-e0d6dd8bf5-carsapi1.apiary-mock.com/manufacturers";
 
-function carDetails(request, response) {
+function carDetails2(request, response) {
   let body = "";
   // callback runs every time the stream has the next bit of data
   axios
@@ -31,4 +31,4 @@ function carDetails(request, response) {
     });
 }
 
-module.exports = carDetails;
+module.exports = carDetails2;

@@ -1,7 +1,4 @@
-// const btn = document.querySelector("");
-
 const input = document.querySelector("input");
-// const log = document.getElementById("log");
 const form = document.querySelector("form");
 const subBtn = document.querySelector("#submit");
 const resultsSection = document.querySelector(
@@ -38,7 +35,6 @@ input.addEventListener("keyup", function (event) {
     });
 });
 
-///// NEED MORE WORK ////
 form.addEventListener("submit", () => {
   let carData;
   if (input.value === "") {
@@ -54,18 +50,16 @@ form.addEventListener("submit", () => {
   })
     .then((response) => response.json())
     .then((response) => {
-      console.log("we got data from THE SERVERRRRRRR : ", response);
+      console.log(response);
       carTemplate(response);
     })
     .catch();
 });
 
 function carTemplate(carData) {
-  HP.textContent = "Avg HP: " + `${carData.avg_horsepower}`;
-  price.textContent = "Avg price: " + `${carData.avg_price}` + "$";
+  HP.textContent = "Avg HP: " + `${carData.avg_horsepower.toFixed(2)}`;
+  price.textContent = "Avg price: " + `${carData.avg_price.toFixed(2)}` + "$";
   Name.textContent = "Maker: " + `${carData.name}`;
   numModels.textContent = "Num Of Models: " + `${carData.num_models}`;
-  //NOT WORKING
-  // carImage.img_url = `${carData.img_url}`;
-  carImage.innerHTML = `<img src=${carData.img_url}/>`;
+  carImage.src = carData.img_url;
 }
