@@ -10,10 +10,6 @@ const Name = document.querySelector(".car-Name");
 const numModels = document.querySelector(".numModels");
 const carImage = document.querySelector(".carImage");
 
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-});
-
 input.addEventListener("keyup", function (event) {
   fetch(`/`, {
     method: "post",
@@ -32,16 +28,16 @@ input.addEventListener("keyup", function (event) {
         parent.appendChild(ele);
       });
       console.log(data);
-    });
+    })
+    .catch((err) => alert("please insert text"));
 });
 
 form.addEventListener("submit", () => {
+  event.preventDefault();
   let carData;
   if (input.value === "") {
     alert("YOU MUST WRITE SOMETHING!");
     return;
-  } else {
-    console.log(carData);
   }
 
   fetch(`/carSearch`, {
@@ -53,7 +49,7 @@ form.addEventListener("submit", () => {
       console.log(response);
       carTemplate(response);
     })
-    .catch();
+    .catch((err) => alert("Insert a correct Car Maker"));
 });
 
 function carTemplate(carData) {
